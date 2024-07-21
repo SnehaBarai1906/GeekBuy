@@ -1,9 +1,10 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { Box, Heading, Container } from '@chakra-ui/react';
-// import ProductList from '../components/ProductList';
+import React, { useEffect, useState } from 'react';
+//import axios from 'axios';
+import { Box, Heading, Container } from '@chakra-ui/react';
+//import ProductList from '../components/ProductList';
+import Carousel from '../components/Carousel';
 
-// const Home = () => {
+const Home = () => {
 //   const [products, setProducts] = useState([]);
 
 //   useEffect(() => {
@@ -17,12 +18,14 @@
 //       });
 //   }, []);
 
-//   return (
-//     <Container maxW="1200px" p={4}>
-//       <Heading as="h1" size="xl" mb={4}>Welcome to Geekbuying Clone</Heading>
-//       <ProductList products={products} />
-//     </Container>
-//   );
-// };
+  return (
+    <Container maxW="1200px" p={4}>
+    <Carousel />
 
-// export default Home;
+      
+      {/* <ProductList products={products} /> */}
+    </Container>
+  );
+};
+
+export default Home;

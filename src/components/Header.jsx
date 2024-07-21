@@ -6,11 +6,11 @@ import { Box, Flex, Image, Button, HStack, InputGroup, InputLeftElement, Input,M
   MenuItemOption,
   MenuGroup,
   MenuOptionGroup,
-  MenuDivider,
-  Link} from '@chakra-ui/react';
+  MenuDivider} from '@chakra-ui/react';
 import { Search2Icon,HamburgerIcon } from '@chakra-ui/icons'; 
+import SignIn from './Signin';
 
-import { Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -36,7 +36,7 @@ const Header = () => {
           <Box>
 
           <Text mr={4}>
-            <Link as={RouterLink} to="/signin" textDecoration="none" textUnderlineOffset="none">
+            <Link to="/signin">
               Hello, Sign in<br></br>
               Account & Order
             </Link>
