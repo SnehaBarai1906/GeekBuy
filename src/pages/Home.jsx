@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 //import axios from 'axios';
 import { Box, Heading, Container } from '@chakra-ui/react';
-//import ProductList from '../components/ProductList';
+
 import Carousel from '../components/Carousel';
+import Trending from '../components/Trending';
 
 const Home = () => {
 //   const [products, setProducts] = useState([]);
@@ -21,9 +22,9 @@ const Home = () => {
   return (
     <Container maxW="1200px" p={4}>
     <Carousel />
-
+    <br></br>
+    <Trending />     
       
-      {/* <ProductList products={products} /> */}
     </Container>
   );
 };

@@ -1,0 +1,50 @@
+div {
+  border: 1px solid red;
+  padding: 5px;
+  margin: 1px;
+}
+
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+}
+
+.Image {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  /* float: right; */
+}
+
+.SidePanel h1 {
+  font-size: 25px;
+  /* height: 10px; */
+  color: #2e2f32;
+  /* padding-bottom: 12px; */
+  position: relative;
+  display: inline-block;
+  position: relative;
+  padding-right: 50px;
+  overflow: hidden;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  /* -webkit-line-clamp: 2; */
+  /* display: -webkit-box; */
+  /* -webkit-box-orient: vertical; */
+  /* line-height: 20px; */
+  /* text-align: center; */
+}
+
+.InfoBar {
+  display: flex;
+}
+.InfoBar span {
+  margin: 2px;
+}
+
+.pdt_timer {
+  display: flex;
+  justify-content: space-around;
+}
