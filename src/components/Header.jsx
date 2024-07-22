@@ -8,7 +8,7 @@ import { Box, Flex, Image, Button, HStack, InputGroup, InputLeftElement, Input,M
   MenuOptionGroup,
   MenuDivider} from '@chakra-ui/react';
 import { Search2Icon,HamburgerIcon } from '@chakra-ui/icons'; 
-import SignIn from './Signin';
+//import SignIn from './Signin';
 
 import { Link } from 'react-router-dom';
 
@@ -70,8 +70,12 @@ const Header = () => {
 
             </MenuList>
           </Menu>
-          <Button variant="link" color="white">New</Button>
-          <Button variant="link" color="white">Best Sellers</Button>
+          <Button variant="link" color="white"><Link to="/new">
+              New
+            </Link></Button>
+          <Button variant="link" color="white"><Link to="/bestseller">
+              Best Seller
+            </Link></Button>
           <Button variant="link" color="white">Brand</Button>
           <Button variant="link" color="white">Clearance</Button>
           <Button variant="link" color="white">Deals</Button>
@@ -80,11 +84,7 @@ const Header = () => {
         </HStack>
         </Flex>
       </Box >
-      <Box>
-        <Flex align="center" maxW="800px" mx="auto">
-          <Text>Free return</Text>
-        </Flex>
-      </Box>
+      
     </Box>
 
 
