@@ -24,7 +24,7 @@ const ProdDetails = () => {
 
   useEffect(() => {
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <div id="content">
@@ -40,8 +40,8 @@ const ProdDetails = () => {
             <span className="fa fa-star checked">
               <StarRoundedIcon />
             </span>
-            {/* <p id="rating">{oneData.rating.rate}</p> */}
-            {/* <p>{oneData.rating.count} Reviews</p> */}
+            {/* <p id="rating">{oneData.rating.rate}</p>
+            <p>{oneData.rating.count} Reviews</p> */}
             <p id="brand">Brand: Wltoys</p>
             <p id="code">Item Code: 123456</p>
           </div>

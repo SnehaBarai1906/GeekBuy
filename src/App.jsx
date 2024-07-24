@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import SignIn from "./components/Signin";
 import New from "./components/New";
 import Bestseller from "./components/Bestseller";
+import ProdDetails from "./components/ProdDetails";
 
 const App = () => {
   const [eComm, setEComm] = useState([]);
