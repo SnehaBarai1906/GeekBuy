@@ -1,28 +1,43 @@
-import React from "react";
-import { Box, Image, Text, Link } from "@chakra-ui/react";
+
+import React from 'react';
+import { Box,Image,Text,Link } from '@chakra-ui/react'
+import { px } from 'framer-motion';
+
 
 const Card = ({ img, title, desc, price, addToCart, id }) => {
   return (
+
     <Link to={`/product/${id}`}>
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+
         <Image src={img} alt={title} />
 
         <Box p="6">
           <Box
-            mt="1"
-            fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
+
+            mt='1'
+            fontWeight='bolder'
+            as='h1'
+            lineHeight='tight'
             noOfLines={1}
+            fontSize='20px'
           >
-            {title}
+          {title}
+          </Box>
+
+          <Text>
+            {desc}       
+        </Text>
+          <Box>
+            <strong>${price}</strong> 
+            {/* <Box as='span' color='gray.600' fontSize='sm'>
+
+              / wk
+            </Box> */}
           </Box>
 
           <Box>
-            {price}
-            <Box as="span" color="gray.600" fontSize="sm">
-              / wk
-            </Box>
+
           </Box>
         </Box>
       </Box>
