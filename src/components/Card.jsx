@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box,Image,Text,Link } from '@chakra-ui/react'
+import { px } from 'framer-motion';
 
 const Card = ({ img, title, desc, price, addToCart ,id}) => {
   return (
     
-      <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Box maxW='sm' bg="white" borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Image src={img} alt={title} />
 
   
@@ -12,19 +13,26 @@ const Card = ({ img, title, desc, price, addToCart ,id}) => {
   
           <Box
             mt='1'
-            fontWeight='semibold'
-            as='h4'
+            fontWeight='bolder'
+            as='h1'
             lineHeight='tight'
             noOfLines={1}
+            fontSize='20px'
           >
-            {title}
+          {title}
           </Box>
-  
+          <Text>
+            {desc}       
+        </Text>
           <Box>
-            {price}
-            <Box as='span' color='gray.600' fontSize='sm'>
+            <strong>${price}</strong> 
+            {/* <Box as='span' color='gray.600' fontSize='sm'>
               / wk
-            </Box>
+            </Box> */}
+          </Box>
+
+          <Box>
+
           </Box>
 
         </Box>

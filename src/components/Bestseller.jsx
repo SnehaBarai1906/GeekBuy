@@ -57,7 +57,7 @@ const New = ({ data }) => {
 
       {/* Product Cards Grid */}
       <Box p={4} bg="gray.100" mx="50px" display="flex" justifyContent="center">
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 5 }} spacing="6" maxWidth="1200px">
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 3 }} spacing="6" maxWidth="1200px">
           {data && data.length > 0 ? (
             data.map(({ id, image, description, title, price }) => (
               <Card
