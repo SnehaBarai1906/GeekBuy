@@ -10,13 +10,16 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const ProdDetails = () => {
   const { id } = useParams();
-  const [oneData, setOneData] = useState({});
+  const [oneData, setOneData] = useState({ rating: { rate: 0, count: 0 } });
 
   async function fetchData() {
     try {
       let res = await fetch(`http://localhost:3000/data/${id}`);
       let data = await res.json();
-      setOneData(data);
+      setOneData(await data);
+      console.log(data);
+      console.log(oneData);
+      // console.log(oneData.rating);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -40,8 +43,8 @@ const ProdDetails = () => {
             <span className="fa fa-star checked">
               <StarRoundedIcon />
             </span>
-            {/* <p id="rating">{oneData.rating.rate}</p>
-            <p>{oneData.rating.count} Reviews</p> */}
+            <p id="rating">{oneData.rating.rate}</p>
+            <p>{oneData.rating.count} Reviews</p>
             <p id="brand">Brand: Wltoys</p>
             <p id="code">Item Code: 123456</p>
           </div>
@@ -60,7 +63,7 @@ const ProdDetails = () => {
           </h2>
           <div id="off">
             <p id="hov">2% OFF New User</p>
-            <p onclick="go_to_cop">Get Coupons</p>
+            <p id="getCpn">Get Coupons</p>
           </div>
           <div id="show_offer">
             <h2>New User Coupon</h2>

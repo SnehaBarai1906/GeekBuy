@@ -1,8 +1,8 @@
-div {
+/* div {
   border: 1px solid red;
   padding: 5px;
   margin: 1px;
-}
+} */
 /*
 .Container {
   display: grid;
@@ -181,11 +181,13 @@ div {
 }
 
 #buton > button:nth-child(3) {
-  padding: 0px;
+  /* padding: px; */
   color: grey;
   width: 30px;
-  margin-left: 0px;
-  border: 1px solid red;
+  margin-left: 2px;
+  margin-right: 3px;
+
+  /* border: 1px solid red; */
 }
 #buton > p {
   padding: 0px;
@@ -193,6 +195,7 @@ div {
   font-weight: 100;
   color: grey;
   padding-top: 8px;
+  letter-spacing: 1px;
 }
 
 #select {
@@ -200,7 +203,7 @@ div {
   color: rgb(20, 74, 237);
 }
 #below {
-  background-color: rgb(213, 209, 209);
+  background-color: rgba(213, 209, 209, 0.273);
   position: sticky;
   top: 5px;
 }
@@ -208,7 +211,7 @@ div {
   margin-right: 30px;
   padding: 10px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
 }
 #below > h2:nth-child(1) {
   color: white;
@@ -223,7 +226,7 @@ div {
   font-size: 18px;
   margin-top: 23px;
   margin-bottom: 7px;
-  font-weight: bolder;
+  font-weight: 500;
   color: rgb(30, 29, 29);
 }
 .bar {
@@ -341,9 +344,7 @@ tr > td {
 .flashIcon {
   color: red;
 }
-.pdt_timer {
-  /* padding: 3px; */
-}
+
 .flashText {
   color: red;
   font-size: 18px;
