@@ -17,8 +17,8 @@ const ProdDetails = () => {
       let res = await fetch(`http://localhost:3000/data/${id}`);
       let data = await res.json();
       setOneData(await data);
-      console.log(data);
-      console.log(oneData);
+      //console.log(data);
+      //console.log(oneData);
       // console.log(oneData.rating);
     } catch (error) {
       console.error("Error fetching data:", error);
