@@ -268,9 +268,9 @@ body {
   margin-left: 30px;
   background-color: rgb(215, 216, 223);
 }
-.first {
+/* .first {
   background-color: rgb(17, 90, 225);
-}
+} */
 
 #below_content > h2 {
   margin-top: 20px;
@@ -343,7 +343,7 @@ body {
 .bar_4,
 .bar_5 {
   width: 100%;
-  color: #747679;
+  color: #3a619b;
 }
 
 .side {

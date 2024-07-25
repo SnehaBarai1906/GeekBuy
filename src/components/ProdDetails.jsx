@@ -44,6 +44,16 @@ const ProdDetails = () => {
     fetchData();
   }, []);
 
+  const [counter, setCounter] = useState(1);
+
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+
+  const decrement = () => {
+    counter > 1 ? setCounter(counter - 1) : setCounter(1);
+  };
+
   return (
     <div id="content">
       <p>Home / {oneData.category}</p>
@@ -74,7 +84,7 @@ const ProdDetails = () => {
           </div>
 
           <h2 id="price">
-            <CurrencyRupeeIcon className="rupeeIcon" /> {oneData.price}
+            {/* <CurrencyRupeeIcon className="rupeeIcon" /> */}$ {oneData.price}
           </h2>
           <div id="off">
             <p id="hov">2% OFF New User</p>
@@ -111,11 +121,11 @@ const ProdDetails = () => {
           <div id="qty">
             <p>QTY:</p>
             <div id="qty_button">
-              <button id="minus">
+              <button id="minus" onClick={decrement}>
                 <RemoveIcon />
               </button>
-              <input type="text" id="number" defaultValue="1" />
-              <button id="plus">
+              <input type="text" id="qtyNum" value={counter} />
+              <button id="plus" onClick={increment}>
                 <AddIcon />
               </button>
             </div>
@@ -208,60 +218,60 @@ const ProdDetails = () => {
             </span>
           </div>
           <div>
-            <div class="row">
-              <div class="side">
+            <div className="row">
+              <div className="side">
                 <div>5 star</div>
               </div>
-              <div class="middle">
-                <div class="bar-container">
-                  <div class="bar-5"></div>
+              <div className="middle">
+                <div className="bar-container">
+                  <div className="bar-5"></div>
                 </div>
               </div>
-              <div class="side right">
+              <div className="side right">
                 <div>0</div>
               </div>
-              <div class="side">
+              <div className="side">
                 <div>4 star</div>
               </div>
-              <div class="middle">
-                <div class="bar-container">
-                  <div class="bar-4"></div>
+              <div className="middle">
+                <div className="bar-container">
+                  <div className="bar-4"></div>
                 </div>
               </div>
-              <div class="side right">
+              <div className="side right">
                 <div>0</div>
               </div>
-              <div class="side">
+              <div className="side">
                 <div>3 star</div>
               </div>
-              <div class="middle">
-                <div class="bar-container">
-                  <div class="bar-3"></div>
+              <div className="middle">
+                <div className="bar-container">
+                  <div className="bar-3"></div>
                 </div>
               </div>
-              <div class="side right">
-                <div>15</div>
-              </div>
-              <div class="side">
-                <div>2 star</div>
-              </div>
-              <div class="middle">
-                <div class="bar-container">
-                  <div class="bar-2"></div>
-                </div>
-              </div>
-              <div class="side right">
+              <div className="side right">
                 <div>0</div>
               </div>
-              <div class="side">
-                <div>1 star</div>
+              <div className="side">
+                <div>2 star</div>
               </div>
-              <div class="middle">
-                <div class="bar-container">
-                  <div class="bar-1"></div>
+              <div className="middle">
+                <div className="bar-container">
+                  <div className="bar-2"></div>
                 </div>
               </div>
-              <div class="side right">
+              <div className="side right">
+                <div>0</div>
+              </div>
+              <div className="side">
+                <div>1 star</div>
+              </div>
+              <div className="middle">
+                <div className="bar-container">
+                  <div className="bar-1"></div>
+                </div>
+              </div>
+              <div className="side right">
                 <div>0</div>
               </div>
             </div>
