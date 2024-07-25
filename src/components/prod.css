@@ -1,9 +1,8 @@
 /* div {
   border: 1px solid red;
-  padding: 5px;
+
   margin: 1px;
 } */
-/*
 .Container {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -17,11 +16,27 @@
   justify-content: space-around;
 } */
 
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800
+
+.open-sans-<uniquifier > {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Open-sans", sans-serif, Arial, Helvetica;
+}
+
 #number {
   font-size: 16px;
   padding-top: 2px;
@@ -36,10 +51,12 @@
 }
 #title,
 #price {
+  /* border: 1px solid red; */
   font-size: 24px;
   font-weight: 500;
   color: rgb(68, 66, 66);
 }
+
 #small > p {
   margin-top: 3px;
   margin-right: 15px;
@@ -52,7 +69,7 @@
   margin-top: 20px;
 }
 #product #price {
-  margin-top: 25px;
+  margin-top: 5px;
   font-size: 28px;
   color: rgb(68, 66, 66);
 }
@@ -93,6 +110,7 @@
   background-color: rgba(216, 226, 249, 0.616);
   padding: 5px;
   height: 25px;
+  font-size: 16px;
 }
 #off p:nth-child(2) {
   color: rgb(20, 74, 237);
@@ -222,6 +240,19 @@
   margin-top: 10px;
   margin-bottom: 50px;
 }
+
+#below_content h2 {
+  font-weight: 500;
+  font-size: 22px;
+  margin: 15px;
+  margin-left: 0px;
+}
+
+#custPhoto p,
+#custVid p {
+  text-align: center;
+}
+
 #below_content .des {
   font-size: 18px;
   margin-top: 23px;
@@ -237,99 +268,32 @@
   margin-left: 30px;
   background-color: rgb(215, 216, 223);
 }
-.first {
+/* .first {
   background-color: rgb(17, 90, 225);
-}
-#star,
-.bar_div {
-  display: flex;
-}
-.bar_div {
-  line-height: 35px;
-}
-#star {
-  width: 90%;
-  margin: auto;
-  justify-content: space-between;
-}
-#star > div > p {
-  margin-top: 40px;
-  font-size: 50px;
-}
-#star h3 {
-  color: rgb(17, 90, 225);
-  margin-left: 12px;
-  font-weight: lighter;
-  cursor: pointer;
-}
-#star button {
-  color: white;
-  background-color: rgb(17, 90, 225);
-  padding: 8px 15px;
-  border-radius: 5px;
-  width: 150px;
-  font-size: 17px;
-  border: 0px;
-  margin-top: 80px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
+} */
+
 #below_content > h2 {
   margin-top: 20px;
 }
-.checked {
-  color: orange;
-}
-table {
-  width: 100%;
-  margin-top: 35px;
-}
 
-tr {
-  height: 70px;
-  padding-left: 50px;
-}
-tr > td:nth-child(1) {
-  width: 200px;
-}
-tr > td {
-  line-height: 30px;
-}
-.date {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  color: rgb(150, 143, 143);
-  border-bottom: 1px solid rgb(228, 222, 222);
-}
 #code {
   color: rgb(167, 161, 161);
 }
 
 #show_offer {
   margin-top: 10px;
-  display: none;
 }
+.checked {
+  color: orange;
+}
+
 #show_offer > h2 {
-  font-size: 17px;
+  padding: 4px 10px;
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
 }
-#show_offer > div {
-  width: 55%;
-  display: flex;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgb(61, 147, 240);
-}
-#show_offer > div > div {
-  background-color: rgb(209, 220, 254);
-  padding: 10px;
-  border-radius: 10px;
-}
-#show_offer > div > div > p:nth-child(1) {
-  font-size: 22px;
-  margin-bottom: 5px;
-  color: rgb(117, 115, 112);
-}
+
 #show_offer button {
   margin-top: 10px;
   border: 0px;
@@ -349,4 +313,64 @@ tr > td {
   color: red;
   font-size: 18px;
   font-weight: 500;
+}
+
+#infoBar {
+  display: flex;
+}
+#infoBar p {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+#rateStar p {
+  font-size: 17px;
+}
+
+#rateNo {
+  font-size: 35px;
+}
+
+.bar-container {
+  width: 100%;
+  background-color: #726c6c;
+  text-align: center;
+  color: white;
+}
+.bar_1,
+.bar_2,
+.bar_3,
+.bar_4,
+.bar_5 {
+  width: 100%;
+  color: #3a619b;
+}
+
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#custReview {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
 }
