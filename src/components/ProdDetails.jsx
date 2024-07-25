@@ -7,6 +7,21 @@ import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { DownloadIcon } from "@chakra-ui/icons";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutLined";
+import { Button } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from "@chakra-ui/react";
 
 const ProdDetails = () => {
   const { id } = useParams();
@@ -40,7 +55,7 @@ const ProdDetails = () => {
         <div id="data">
           <h2 id="title">{oneData.title}</h2>
           <div id="small">
-            <span className="fa fa-star checked">
+            <span className="checked">
               <StarRoundedIcon />
             </span>
             <p id="rating">{oneData.rating.rate}</p>
@@ -59,24 +74,36 @@ const ProdDetails = () => {
           </div>
 
           <h2 id="price">
-            <CurrencyRupeeIcon /> {oneData.price}
+            <CurrencyRupeeIcon className="rupeeIcon" /> {oneData.price}
           </h2>
           <div id="off">
             <p id="hov">2% OFF New User</p>
-            <p id="getCpn">Get Coupons</p>
+            <Popover trigger="hover">
+              <PopoverTrigger>
+                <p id="getCpn">Get Coupons</p>
+              </PopoverTrigger>
+              <PopoverContent placement="bottom">
+                <PopoverArrow />
+                <div id="show_offer">
+                  <h2>New User Coupon</h2>
+                  <div>
+                    <div id="cpnDet">
+                      <p style={{ fontSize: "19px", color: "black" }}>
+                        2% OFF, max save Rs. 676.17
+                      </p>
+                      <p style={{ fontsize: "2px", color: "black" }}>
+                        Valid within 7 days after received
+                      </p>
+                    </div>
+                    <div>
+                      <button>Get Now</button>
+                    </div>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
-          <div id="show_offer">
-            <h2>New User Coupon</h2>
-            <div>
-              <div>
-                <p>2% OFF, max save $10</p>
-                <p>Valid only for 7 days after received</p>
-              </div>
-              <div>
-                <button>Get Now</button>
-              </div>
-            </div>
-          </div>
+
           <div id="from">
             <p>Ship From:</p>
             <p id="from_country">China</p>
@@ -117,12 +144,24 @@ const ProdDetails = () => {
               alt=""
             />
           </div>
+          <div id="infoBar">
+            <DownloadIcon />
+            <p>Dropshipping Download</p>
+            <ArticleOutlinedIcon />
+            <p>Bulk Order Rebate</p>
+          </div>
         </div>
       </div>
       <div id="below">
-        <h2 id="descrip">Description</h2>
-        <h2 id="rev">Review</h2>
-        <h2 id="qa">Q&A</h2>
+        <h2 id="descrip">
+          <a href=".des">Description</a>
+        </h2>
+        <h2 id="rev">
+          <a href="#custReview">Review</a>
+        </h2>
+        <h2 id="qa">
+          <a href="#desQA">Q&A</a>
+        </h2>
       </div>
       <div id="below_content">
         <p>
@@ -130,6 +169,146 @@ const ProdDetails = () => {
           {oneData.description}
           <br />
         </p>
+        <div id="custPhoto">
+          <h2>Customer Photos</h2>
+          <p>
+            Be the first to{" "}
+            <span style={{ color: "blue" }}>Upload A photo </span>
+            of this product
+          </p>
+        </div>
+        <div id="custVid">
+          <h2>Customer Videos</h2>
+          <p>
+            Be the first to
+            <span style={{ color: "blue" }}> Upload A Video </span>of this
+            product
+          </p>
+        </div>
+        <h2>Customer Reviews</h2>
+        <div id="custReview">
+          <div id="rateStar">
+            <p>
+              <span id="rateNo"> {oneData.rating.rate} </span> out of 5
+            </p>
+            <span className="checked">
+              <StarRoundedIcon />
+            </span>
+            <span className="checked">
+              <StarRoundedIcon />
+            </span>
+            <span className="checked">
+              <StarRoundedIcon />
+            </span>
+            <span>
+              <StarRoundedIcon />
+            </span>
+            <span>
+              <StarRoundedIcon />
+            </span>
+          </div>
+          <div>
+            <div class="row">
+              <div class="side">
+                <div>5 star</div>
+              </div>
+              <div class="middle">
+                <div class="bar-container">
+                  <div class="bar-5"></div>
+                </div>
+              </div>
+              <div class="side right">
+                <div>0</div>
+              </div>
+              <div class="side">
+                <div>4 star</div>
+              </div>
+              <div class="middle">
+                <div class="bar-container">
+                  <div class="bar-4"></div>
+                </div>
+              </div>
+              <div class="side right">
+                <div>0</div>
+              </div>
+              <div class="side">
+                <div>3 star</div>
+              </div>
+              <div class="middle">
+                <div class="bar-container">
+                  <div class="bar-3"></div>
+                </div>
+              </div>
+              <div class="side right">
+                <div>15</div>
+              </div>
+              <div class="side">
+                <div>2 star</div>
+              </div>
+              <div class="middle">
+                <div class="bar-container">
+                  <div class="bar-2"></div>
+                </div>
+              </div>
+              <div class="side right">
+                <div>0</div>
+              </div>
+              <div class="side">
+                <div>1 star</div>
+              </div>
+              <div class="middle">
+                <div class="bar-container">
+                  <div class="bar-1"></div>
+                </div>
+              </div>
+              <div class="side right">
+                <div>0</div>
+              </div>
+            </div>
+          </div>
+          <div id="revBtn">
+            <Button margin="7px" bg="rgb(20, 74, 237)" color="white">
+              Write a Review
+            </Button>
+          </div>
+        </div>
+        <div>
+          <Tabs colorScheme="blue">
+            <TabList>
+              <Tab>All</Tab>
+              <Tab>Images</Tab>
+              <Tab>Videos</Tab>
+            </TabList>
+
+            <TabPanels>
+              <TabPanel>
+                <p style={{ textAlign: "center" }}>No reviews</p>
+              </TabPanel>
+              <TabPanel>
+                <p style={{ textAlign: "center" }}>No reviews</p>
+              </TabPanel>
+              <TabPanel>
+                <p style={{ textAlign: "center" }}>No reviews</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+
+          <h2 id="desQA">Question & Answers</h2>
+          <Tabs>
+            <TabList>
+              <Tab>All</Tab>
+            </TabList>
+
+            <TabPanels>
+              <TabPanel>
+                <p>No Discussion</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+          <Button bg="rgb(20, 74, 237)" color="white">
+            Ask a Question
+          </Button>
+        </div>
       </div>
     </div>
   );
