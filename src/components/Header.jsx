@@ -8,6 +8,8 @@ import { Box, Flex, Image, Button, HStack, InputGroup, InputLeftElement, Input,M
   MenuOptionGroup,
   MenuDivider} from '@chakra-ui/react';
 import { Search2Icon,HamburgerIcon } from '@chakra-ui/icons'; 
+import { FiShoppingCart } from "react-icons/fi";
+
 //import SignIn from './Signin';
 
 import { Link } from 'react-router-dom';
@@ -43,10 +45,16 @@ const Header = () => {
           </Text>
           
           </Box>
+          <Box >
+            <Link to="/Cart">
+             <FiShoppingCart size={40}/>
+            </Link>
+          </Box>
           
         </Flex>
         
       </Box>
+      
 
 
       <Box bg="rgba(7, 97, 232, 1)" color="white" p={1}>

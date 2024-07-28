@@ -7,6 +7,7 @@ import SignIn from "./components/Signin";
 import New from "./components/New";
 import Bestseller from "./components/Bestseller";
 import ProdDetails from "./components/ProdDetails";
+import CartPage from './components/Cart';
 
 const App = () => {
   const [eComm, setEComm] = useState([]);
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/new" element={<New data={eComm} />} />
         <Route path="/bestseller" element={<Bestseller data={eComm} />} />
         <Route path="/product/:id" element={<ProdDetails />} />
+        <Route path="/cart" component={CartPage} />
         
       </Routes>
       <br />

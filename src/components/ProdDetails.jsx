@@ -11,6 +11,8 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 const ProdDetails = () => {
   const { id } = useParams();
   const [oneData, setOneData] = useState({ rating: { rate: 0, count: 0 } });
+  const [quantity , setQunatity] = useState(1);
+  const [cart , setCart] = useState([]);
 
   async function fetchData() {
     try {
@@ -28,6 +30,30 @@ const ProdDetails = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const handleAddToCart = () => {
+    const productDetails = {
+      id: oneData.id,
+      title: oneData.title,
+      price: oneData.price,
+      quantity: quantity,
+    };
+    setCart((prevCart) => {
+      const existingProductIndex = prevCart.findIndex((item) => item.id === oneData.id);
+      if (existingProductIndex >= 0) {
+        // If product already in cart, update its quantity
+        const updatedCart = [...prevCart];
+        updatedCart[existingProductIndex].quantity += quantity;
+        return updatedCart;
+      } else {
+        // If product not in cart, add it
+        return [...prevCart, productDetails];
+      }
+    });
+
+    console.log("Product added to cart:",productDetails);
+  }
+
 
   return (
     <div id="content">
@@ -103,7 +129,7 @@ const ProdDetails = () => {
             </select>
           </div>
           <div id="buton">
-            <button id="btn1">Add to Cart</button>
+            <button id="btn1" onClick={handleAddToCart}>Add to Cart</button>
             <button id="btn2">Buy Now</button>
             <button id="heartBtn">
               <FavoriteBorderOutlinedIcon />
