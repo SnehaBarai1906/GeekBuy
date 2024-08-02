@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Image, Text, Button } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import React from "react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Card = ({ img, title, desc, price, addToCart, id }) => {
   return (
@@ -20,13 +20,10 @@ const Card = ({ img, title, desc, price, addToCart, id }) => {
             {title}
           </Box>
 
-          <Text>
-            {desc}
-          </Text>
+          <Text>{desc}</Text>
           <Box>
             <strong>${price}</strong>
           </Box>
-
         </Box>
       </Box>
     </RouterLink>

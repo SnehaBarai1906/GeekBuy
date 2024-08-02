@@ -24,35 +24,54 @@ import {
 } from "@chakra-ui/react";
 
 const ProdDetails = () => {
-  const { id } = useParams();
   const [oneData, setOneData] = useState({ rating: { rate: 0, count: 0 } });
+  const { id } = useParams();
 
-  async function fetchData() {
+  async function fetchData(id) {
     try {
       let res = await fetch(`http://localhost:3000/data/${id}`);
+      console.log(id);
       let data = await res.json();
       setOneData(await data);
-      //console.log(data);
-      //console.log(oneData);
-      // console.log(oneData.rating);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(id);
+  }, [id]);
 
   const [counter, setCounter] = useState(1);
 
   const increment = () => {
-    setCounter(counter + 1);
+    counter == 10 ? setCounter(10) : setCounter(counter + 1);
   };
 
   const decrement = () => {
     counter > 1 ? setCounter(counter - 1) : setCounter(1);
   };
+
+  async function handleCart() {
+    let obj = {
+      id: oneData.id,
+      title: oneData.title,
+      image: oneData.img,
+      description: oneData.description,
+      price: oneData.price,
+      rating: {
+        rate: oneData.rate,
+        count: oneData.count,
+      },
+    };
+    let res = await fetch("http://localhost:3000/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+  }
 
   return (
     <div id="content">
@@ -140,7 +159,9 @@ const ProdDetails = () => {
             </select>
           </div>
           <div id="buton">
-            <button id="btn1">Add to Cart</button>
+            <button id="btn1" onClick={handleCart}>
+              Add to Cart
+            </button>
             <button id="btn2">Buy Now</button>
             <button id="heartBtn">
               <FavoriteBorderOutlinedIcon />
