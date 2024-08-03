@@ -59,6 +59,7 @@ const ProdDetails = () => {
       image: oneData.img,
       description: oneData.description,
       price: oneData.price,
+      quantity: counter,
       rating: {
         rate: oneData.rate,
         count: oneData.count,

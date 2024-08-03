@@ -6,8 +6,8 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
-      "brand":"ANBRENIC",
-      "code":525139,
+      "brand": "ANBRENIC",
+      "code": 525139,
       "image": "https://img.gkbcdn.com/p/2024-07-17/ANBERNIC-RG40XX-H-Game-Console-64GB-128GB-Grey-525139-0._w280_p1_.jpg",
       "rating": {
         "rate": 3.9,
@@ -244,6 +244,53 @@
     }
   ],
   "cart": [
-    
+    {
+      "id": "1",
+      "title": "ANBERNIC RG40XX H Retro Game Console with RGB Light, 64GB+128GB TF Card with 13000+ Games, LPDDR4 1GB, 640*480P IPS Screen, 3200mAh Battery for 6 Hours Autonomy, Linux OS, 5G Wifi Bluetooth, Moonlight Streaming - Grey",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "quantity": 1,
+      "rating": {}
+    },
+    {
+      "id": "3",
+      "title": "16 inch 8k display",
+      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+      "price": 55.99,
+      "quantity": 1,
+      "rating": {}
+    },
+    {
+      "id": "8",
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+      "price": 10.99,
+      "quantity": 1,
+      "rating": {}
+    },
+    {
+      "id": "1",
+      "title": "ANBERNIC RG40XX H Retro Game Console with RGB Light, 64GB+128GB TF Card with 13000+ Games, LPDDR4 1GB, 640*480P IPS Screen, 3200mAh Battery for 6 Hours Autonomy, Linux OS, 5G Wifi Bluetooth, Moonlight Streaming - Grey",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "quantity": 1,
+      "rating": {}
+    },
+    {
+      "id": "1",
+      "title": "ANBERNIC RG40XX H Retro Game Console with RGB Light, 64GB+128GB TF Card with 13000+ Games, LPDDR4 1GB, 640*480P IPS Screen, 3200mAh Battery for 6 Hours Autonomy, Linux OS, 5G Wifi Bluetooth, Moonlight Streaming - Grey",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "quantity": 1,
+      "rating": {}
+    },
+    {
+      "id": "1",
+      "title": "ANBERNIC RG40XX H Retro Game Console with RGB Light, 64GB+128GB TF Card with 13000+ Games, LPDDR4 1GB, 640*480P IPS Screen, 3200mAh Battery for 6 Hours Autonomy, Linux OS, 5G Wifi Bluetooth, Moonlight Streaming - Grey",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "quantity": 5,
+      "rating": {}
+    }
   ]
 }

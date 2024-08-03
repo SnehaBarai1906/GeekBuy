@@ -58,7 +58,9 @@ const Header = () => {
             </Text>
           </Box>
           <Box>
-            <FiShoppingCart size={40} />
+            <Link to="/cart">
+              <FiShoppingCart size={40} />
+            </Link>
           </Box>
         </Flex>
       </Box>
