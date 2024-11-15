@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignIn.css";
+import "./Login.css";
 
-function SignIn() {
+function LoginPage() {
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,39 +18,20 @@ function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const userExists = users.some((user) => user.email === email);
+    const user = users.find((user) => user.email === email && user.password === password);
 
-    if (userExists) {
-      setMessage("User already exists. Please log in.");
-      return;
+    if (user) {
+      setMessage("Login successful!");
+      navigate("/"); // Navigate to the home page or dashboard
+    } else {
+      setMessage("Invalid email or password.");
     }
-
-    const newUser = { email, password };
-
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    })
-      .then((response) => {
-        if (response.ok) {
-          setMessage("User registered successfully!");
-          setUsers((prev) => [...prev, newUser]);
-          setEmail("");
-          setPassword("");
-        } else {
-          setMessage("Error registering user.");
-        }
-      })
-      .catch(() => setMessage("Error connecting to the server."));
   };
 
   return (
-    <div className="app2">
+    <div className="app1">
       <main>
-        <form onSubmit={handleSubmit} className="sign-in-form">
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -71,13 +52,13 @@ function SignIn() {
               required
             />
           </div>
-          <button type="submit">Sign In</button>
+          <button type="submit">Log In</button>
         </form>
         {message && <p className="message">{message}</p>}
         <p>
-          Already have an account?{" "}
-          <button className="link-button" onClick={() => navigate("/login")}>
-            Log In
+          Don't have an account?{" "}
+          <button className="link-button" onClick={() => navigate("/signin")}>
+            Sign Up
           </button>
         </p>
       </main>
@@ -85,4 +66,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default LoginPage;

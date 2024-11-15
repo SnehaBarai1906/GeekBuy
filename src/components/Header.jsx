@@ -31,8 +31,8 @@ const Header = () => {
     <Box>
       <Box bg="rgba(0, 102, 255, 1)" color="white" p={5}>
         <Flex align="center" maxW="1200px" mx="auto">
-          <Text fontWeight="bolder" fontSize="larger">
-            Geekbuying
+          <Text fontWeight="bolder" fontSize="larger">Geekbuying
+            
           </Text>
 
           <InputGroup maxW="700px" mx="auto" ml={3}>

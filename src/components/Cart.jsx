@@ -7,49 +7,59 @@ function CartPage() {
   useEffect(() => {
     fetch("http://localhost:3000/cart")
       .then((response) => response.json())
-      .then((data) => setCart(data));
+      .then((data) => setCart(data))
+      .catch((error) => console.error("Error fetching cart data:", error));
   }, []);
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const removeFromCart = (id) => {
+    fetch(`http://localhost:3000/cart/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+      })
+      .catch((error) => console.error("Error removing item from cart:", error));
+  };
+
+  const total = cart.reduce(
+    (sum, item) => sum + (item.price || 0) * (item.quantity || 0),
+    0
+  );
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>Shopping Cart</h1>
-      </header>
       <main>
-        <table className="cart-table">
-          <thead>
-            <tr>
-              <th>Product Name & Detail</th>
-              <th>Unit Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <div>{item.title}</div>
-                  {/* <div>Option: {item.option}</div> */}
-                </td>
-                <td>₹ {item.price.toFixed(2)}</td>
-                <td>{item.quantity}</td>
-                <td>₹ {(item.price * item.quantity).toFixed(2)}</td>
-              </tr>
-            ))}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan="3">Total</td>
-              <td>₹ {total.toFixed(2)}</td>
-            </tr>
-          </tfoot>
-        </table>
-        <div className="checkout-buttons">
-          <button>Pay with PayPal</button>
-          <button>Proceed to checkout</button>
+        <div className="cart-container">
+          {cart.map((item) => (
+            <div key={item.id} className="cart-item">
+              <img
+                src={item.image || "https://via.placeholder.com/150"}
+                alt={item.title || "Product Image"}
+                className="cart-item-image"
+              />
+              <div className="cart-item-details">
+                <h2 className="cart-item-title">{item.title || "Unknown Product"}</h2>
+                <p className="cart-item-price">Price: ₹ {(item.price || 0).toFixed(2)}</p>
+                <p className="cart-item-quantity">Quantity: {item.quantity || 0}</p>
+                <p className="cart-item-total">
+                  Total: ₹ {((item.price || 0) * (item.quantity || 0)).toFixed(2)}
+                </p>
+                <button
+                  className="remove-button"
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  Remove from Cart
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="cart-summary">
+          <h2>Total: ₹ {total.toFixed(2)}</h2>
+          <div className="checkout-buttons">
+            <button>Pay with PayPal</button>
+            <button>Proceed to Checkout</button>
+          </div>
         </div>
       </main>
     </div>

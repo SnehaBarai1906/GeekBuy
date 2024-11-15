@@ -56,13 +56,13 @@ const ProdDetails = () => {
     let obj = {
       id: oneData.id,
       title: oneData.title,
-      image: oneData.img,
+      image: oneData.image,
       description: oneData.description,
       price: oneData.price,
       quantity: counter,
       rating: {
-        rate: oneData.rate,
-        count: oneData.count,
+        rate: oneData.rating.rate,
+        count: oneData.rating.count,
       },
     };
     let res = await fetch("http://localhost:3000/cart", {

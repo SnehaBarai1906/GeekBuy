@@ -19,7 +19,7 @@ const New = ({ data }) => {
         textAlign='center'
         mb={4}
       >
-        <Text>New Arrivals</Text>
+        <Text>Best Seller</Text>
       </Box>
 
       {/* Filter and Sort Section */}
