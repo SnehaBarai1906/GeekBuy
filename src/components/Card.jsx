@@ -14,13 +14,13 @@ const Card = ({ img, title, desc, price, addToCart, id }) => {
             fontWeight="bold"
             as="h1"
             lineHeight="tight"
-            noOfLines={1}
-            fontSize="20px"
+            noOfLines={3}
+            fontSize="17px"
           >
             {title}
           </Box>
 
-          <Text>{desc}</Text>
+          {/* <Text>{desc}</Text> */}
           <Box>
             <strong>${price}</strong>
           </Box>

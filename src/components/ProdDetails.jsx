@@ -172,7 +172,7 @@ const ProdDetails = () => {
           <div id="payment">
             <p>Payment</p>
             <img
-              src="https://1000logos.net/wp-content/uploads/2021/04/Paypal-logo.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR01IiJEzLYwzuQethJraGGG-3-vbKQ8AbQTQ&s"
               alt=""
             />
           </div>
